@@ -78,8 +78,10 @@
     border-radius: 4px;
     display: inline-block;
     height: 20px;
+    margin-right: 10px;
     width: 20px;
 }
+
 .color-8650F5,
 .card-8650F5 {
     background-color: #8650f5;
@@ -152,4 +154,11 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+
+.player-list li {
+    align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
 }
