@@ -1,3 +1,9 @@
+.container {
+    display: flex;
+    margin: 50px auto;
+    width: 1035px;
+}
+
 .questions {
     align-items: center;
     display: grid;
@@ -6,7 +12,6 @@
     grid-template-columns: repeat(5, 150px);
     grid-template-rows: repeat(5, 150px);
     justify-items: center;
-    margin: 50px auto;
     width: 815px;
 }
      
@@ -68,52 +73,83 @@
     transform: rotateY(180deg);
 }
 
+.player-color {
+    border: 1px solid #999;
+    border-radius: 4px;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+}
+.color-8650F5,
 .card-8650F5 {
     background-color: #8650f5;
     color: #eee;
 }
 
+.color-040F0F,
 .card-040F0F {
     background-color: #040F0F;
     color: #eee;
 }
 
+.color-24D6E0,
 .card-24D6E0 {
     background-color: #24d6e0;
     color: #eee;
 }
 
+.color-773344,
 .card-773344 {
     background-color: #773344;
     color: #eee;
 }
 
+.color-816C61,
 .card-816C61 {
     background-color: #816C61;
     color: #eee;
 }
 
+.color-2A2C24,
 .card-2A2C24 {
     background-color: #2A2C24;
     color: #eee;
 }
 
+.color-57737A,
 .card-57737A {
     background-color: #57737a;
     color: #eee;
 }
 
+.color-058C42,
 .card-058C42 {
     background-color: #058c42;
     color: #eee;
 }
 
+.color-16DB65,
 .card-16DB65 {
     background-color: #16DB65;
     color: #eee;
 }
 
+.color-561F37,
 .card-561F37 {
     background-color: #561F37;
     color: #eee;
+}
+
+.players {
+    background-color: #eee;
+    border-radius: 10px;
+    margin-right: 20px;
+    padding: 20px;
+    width: 200px;
+}
+
+.player-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }

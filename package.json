@@ -1,7 +1,7 @@
 {
   "name": "icebreaker-game",
   "version": "0.1.0",
-  "homepage": "https://killsunday.github.io/react-gh-pages",
+  "homepage": "https://killsunday.github.io/icebreaker-game",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",

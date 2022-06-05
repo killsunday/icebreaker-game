@@ -5,11 +5,14 @@ import { questions } from './assets/questions.js'
 import { colors } from './assets/colors.js';
 import { randomizeArray, getQuestions } from './utils.js';
 import { Question } from './components/Question.js';
+import { Players } from './components/Players.js';
 
 
 
 function App() {
   const [ currentQuestions, setCurrentQuestions ] = useState([]);
+  const [ players, setPlayers ] = useState(new Array());
+  const [ currentPlayer, setCurrentPlayer ] = useState({});
   const questionArray = randomizeArray(questions);
   const userColors = randomizeArray(colors);
   
@@ -19,11 +22,28 @@ function App() {
     let tmpQuestions = [...currentQuestions];
     tmpQuestions[index].flipped = !tmpQuestions[index].flipped;
     if ( !tmpQuestions[index].color ) {
-      tmpQuestions[index].color = userColors.pop();
+      tmpQuestions[index].color = currentPlayer.playerColor;
     }
 
     setCurrentQuestions(tmpQuestions);
   };
+
+  const handleAddPlayer = (playerName) => {
+    const newPlayer = {
+      playerName,
+      playerColor: userColors.pop(),
+    }
+    setPlayers([ ...players, newPlayer ]);
+
+    if (!Object.keys(currentPlayer).length) {
+      setCurrentPlayer(newPlayer);
+    }
+  };
+
+  const handleCurrentPlayer = () => {
+
+  };
+
 
   useEffect(() => {
     setCurrentQuestions(getQuestions(questionArray));
@@ -31,8 +51,11 @@ function App() {
 
   return (
     <div className="App">
-        <div class="questions">
-          {currentQuestions.map((question, index) => <Question color={question.color} flipped={question.flipped} question={question.question} onClick={() => handleOnClick(index)} index={index} />)}
+        <div class="container">
+          <Players players={players} onAddPlayer={handleAddPlayer} onSwitchPlayer={handleCurrentPlayer} /> 
+          <div className="questions">
+            {currentQuestions.map((question, index) => <Question color={question.color} flipped={question.flipped} question={question.question} onClick={() => handleOnClick(index)} index={index} />)}
+          </div>
         </div>
     </div>
   );
