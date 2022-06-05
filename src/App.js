@@ -21,6 +21,7 @@ function App() {
     // clone the currentQuestions so that we can update the flipped state.
     let tmpQuestions = [...currentQuestions];
     tmpQuestions[index].flipped = !tmpQuestions[index].flipped;
+    
     if ( !tmpQuestions[index].color ) {
       tmpQuestions[index].color = currentPlayer.playerColor;
     }
