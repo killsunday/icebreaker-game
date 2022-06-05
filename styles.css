@@ -1,0 +1,119 @@
+.questions {
+    align-items: center;
+    display: grid;
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(5, 150px);
+    grid-template-rows: repeat(5, 150px);
+    justify-items: center;
+    margin: 50px auto;
+    width: 815px;
+}
+     
+.question {     
+    align-items: center;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    height: 150px;
+    justify-content: center;
+    perspective: 1000px;
+    width: 150px;
+}
+
+.question-number {
+    background-color: #0AB7C9;
+    color: #fff;
+    font-size: 5em;
+}
+
+.question-text {
+    background-color: #aaa;
+    color: #333;
+}
+
+.card-front p,
+.card-back p {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.card-inner {
+    height: 100%;
+    position: relative;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    width: 100%;
+}
+
+.card-front,
+.card-back {
+    align-items: center;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.flipped .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-8650F5 {
+    background-color: #8650f5;
+    color: #eee;
+}
+
+.card-040F0F {
+    background-color: #040F0F;
+    color: #eee;
+}
+
+.card-24D6E0 {
+    background-color: #24d6e0;
+    color: #eee;
+}
+
+.card-773344 {
+    background-color: #773344;
+    color: #eee;
+}
+
+.card-816C61 {
+    background-color: #816C61;
+    color: #eee;
+}
+
+.card-2A2C24 {
+    background-color: #2A2C24;
+    color: #eee;
+}
+
+.card-57737A {
+    background-color: #57737a;
+    color: #eee;
+}
+
+.card-058C42 {
+    background-color: #058c42;
+    color: #eee;
+}
+
+.card-16DB65 {
+    background-color: #16DB65;
+    color: #eee;
+}
+
+.card-561F37 {
+    background-color: #561F37;
+    color: #eee;
+}
