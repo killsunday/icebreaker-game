@@ -139,5 +139,13 @@ export const questions = [
     'When you take notes, do you jot down ideas online or with a pen and paper?',
     'Do you have lunch at home or head out to grab something to eat?',
     'Do you have any pets in your office?',
-    'What kind of art would you hang in your office?'
+    'What kind of art would you hang in your office?',
+    'What\'s one interesting thing recently that happened in your life?',
+    '2 truths and 1 lie',
+    'What was your first job?',
+    'What\'s the strangest food you\'ve ever tried?',
+    'What did you do growing up that got you into trouble?',
+    'Have you ever met a celebrity? If yes, who?  If not, who would you like to meet?',
+    'Would you rather fight an organutang with a sword once or an angry chicken every time you enter your car?',
+    'What always makes you laugh?'
 ];
