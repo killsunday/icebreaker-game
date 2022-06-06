@@ -17,15 +17,14 @@ function App() {
   const userColors = randomizeArray(colors);
   
   const handleOnClick = (index) => {
-
     // clone the currentQuestions so that we can update the flipped state.
     let tmpQuestions = [...currentQuestions];
     tmpQuestions[index].flipped = !tmpQuestions[index].flipped;
 
-    if ( !tmpQuestions[index].color ) {
-      tmpQuestions[index].color = players[currentPlayerIndex].playerColor;
+    if ( !tmpQuestions[index].color) {
+      tmpQuestions[index].color = players[currentPlayerIndex]?.playerColor;
     }
-
+    
     setCurrentQuestions(tmpQuestions);
   };
 
