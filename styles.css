@@ -150,6 +150,12 @@
     width: 200px;
 }
 
+.players p {
+    border-bottom: 1px solid #333;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+}
+
 .player-list {
     list-style-type: none;
     margin: 0;
