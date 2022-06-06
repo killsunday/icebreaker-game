@@ -11,23 +11,26 @@ export const Players = (props) => {
     const handleKeyDown = (e) => {
         if(e.keyCode === 13 && e.currentTarget.value.trim() !== "") {
             e.preventDefault();
-            props.onAddPlayer(playerName);
+            props.onAddPlayer(playerName.trim());
             
-            console.log("what?");
             setPlayerName("");
         }
      }
 
     return (
         <div className="players">
+            <h3>Players</h3>
             <ul className="player-list">
-                {props.players.length !== 0 && props.players.map((player) => {
+                {props.players.length !== 0 && props.players.map((player, index) => {
                     return (
-                        <Player key={`player-${player.playerName}`} playerName={player.playerName} playerColor={player.playerColor} />
+                        <Player key={`player-${player.playerName}`} isActive={props.currentPlayerIndex === index} playerName={player.playerName} playerColor={player.playerColor} />
                     )
                 })}
             </ul>
-            {props.players.length < 10 && <input type="text" value={playerName} onChange={handleChange} onKeyDown={handleKeyDown} />}
+            <p>
+                <button className="next-player-button" onClick={props.onSwitchPlayer}>Next Player</button>
+            </p>
+            {props.players.length < 10 && <input type="text" placeholder="Enter a players name..." value={playerName} onChange={handleChange} onKeyDown={handleKeyDown} />}
         </div>
     )
 }

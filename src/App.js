@@ -11,8 +11,8 @@ import { Players } from './components/Players.js';
 
 function App() {
   const [ currentQuestions, setCurrentQuestions ] = useState([]);
-  const [ players, setPlayers ] = useState(new Array());
-  const [ currentPlayer, setCurrentPlayer ] = useState({});
+  const [ players, setPlayers ] = useState([]);
+  const [ currentPlayerIndex, setCurrentPlayerIndex ] = useState(0);
   const questionArray = randomizeArray(questions);
   const userColors = randomizeArray(colors);
   
@@ -21,9 +21,9 @@ function App() {
     // clone the currentQuestions so that we can update the flipped state.
     let tmpQuestions = [...currentQuestions];
     tmpQuestions[index].flipped = !tmpQuestions[index].flipped;
-    
+
     if ( !tmpQuestions[index].color ) {
-      tmpQuestions[index].color = currentPlayer.playerColor;
+      tmpQuestions[index].color = players[currentPlayerIndex].playerColor;
     }
 
     setCurrentQuestions(tmpQuestions);
@@ -35,14 +35,14 @@ function App() {
       playerColor: userColors.pop(),
     }
     setPlayers([ ...players, newPlayer ]);
-
-    if (!Object.keys(currentPlayer).length) {
-      setCurrentPlayer(newPlayer);
-    }
   };
 
   const handleCurrentPlayer = () => {
+    let index = currentPlayerIndex + 1;
 
+    if (index >= players.length) index = 0;
+
+    setCurrentPlayerIndex(index);
   };
 
 
@@ -53,9 +53,25 @@ function App() {
   return (
     <div className="App">
         <div class="container">
-          <Players players={players} onAddPlayer={handleAddPlayer} onSwitchPlayer={handleCurrentPlayer} /> 
+          
+          <Players 
+            players={players}
+            currentPlayerIndex={currentPlayerIndex}
+            onAddPlayer={handleAddPlayer} 
+            onSwitchPlayer={handleCurrentPlayer} /> 
+
           <div className="questions">
-            {currentQuestions.map((question, index) => <Question color={question.color} flipped={question.flipped} question={question.question} onClick={() => handleOnClick(index)} index={index} />)}
+            {currentQuestions.map((question, index) => { 
+              return (
+                <Question 
+                  key={`question-tile-${index}`}
+                  color={question.color} 
+                  flipped={question.flipped} 
+                  question={question.question}
+                  onClick={() => handleOnClick(index)} 
+                  index={index} />);
+              })
+            }
           </div>
         </div>
     </div>
