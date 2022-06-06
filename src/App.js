@@ -54,7 +54,7 @@ function App() {
 
   return (
     <div className="App">
-        <div Name="container">
+        <div className="container">
           
           <Players 
             players={players}
